@@ -297,31 +297,7 @@
       }
     }
   </script>
-<script>
-  const SUPABASE_URL = "https://gdqggfjtntoxidgrknrk.supabase.co";
-  const SUPABASE_KEY = "sb_publishable_5shMC9mWukS3Mkxf5Tdf-w_gooBU2sP";
 
-  async function loadProductsFromSupabase() {
-    try {
-        const response = await fetch(
-              `${SUPABASE_URL}/rest/v1/Products?select=*`,
-                    {
-                            headers: {
-                                      apikey: SUPABASE_KEY,
-                                                Authorization: `Bearer ${SUPABASE_KEY}`
-                                                        }
-                                                              }
-                                                                  );
-
-                                                                      const products = await response.json();
-                                                                          console.log("NY Price products:", products);
-                                                                            } catch (error) {
-                                                                                console.error("Error loading NY Price products:", error);
-                                                                                  }
-                                                                                  }
-
-                                                                                  loadProductsFromSupabase();
-                                                                                  </script>
 </body>
 </html>                                                                                                                                                                                                                                                                                                                    padding: 14px 28px;
                                                                                                                                                                                                                                                                                                                           text-decoration: none;
