@@ -2,77 +2,304 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>NY Style Boutique</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NY Style Boutique</title>
 
-        <style>
-            * {
-                  box-sizing: border-box;
-                        margin: 0;
-                              padding: 0;
-                                  }
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-                                      body {
-                                            background: #000;
-                                                  color: #fff;
-                                                        font-family: Arial, sans-serif;
-                                                            }
+    body {
+      background: #080808;
+      color: white;
+      font-family: Arial, Helvetica, sans-serif;
+    }
 
-                                                                header {
-                                                                      text-align: center;
-                                                                            padding: 35px 20px;
-                                                                                  border-bottom: 1px solid #333;
-                                                                                      }
+    header {
+      text-align: center;
+      padding: 38px 15px 25px;
+      border-bottom: 1px solid #333;
+    }
 
-                                                                                          header h1 {
-                                                                                                font-size: 32px;
-                                                                                                      letter-spacing: 3px;
-                                                                                                          }
+    .logo {
+      font-size: 34px;
+      font-weight: 800;
+      letter-spacing: 6px;
+      line-height: 1.15;
+    }
 
-                                                                                                              header p {
-                                                                                                                    margin-top: 10px;
-                                                                                                                          color: #aaa;
-                                                                                                                                letter-spacing: 2px;
-                                                                                                                                    }
+    .subtitle {
+      margin-top: 14px;
+      font-size: 14px;
+      letter-spacing: 4px;
+      color: #ddd;
+    }
 
-                                                                                                                                        nav {
-                                                                                                                                              display: flex;
-                                                                                                                                                    justify-content: center;
-                                                                                                                                                          gap: 25px;
-                                                                                                                                                                padding: 20px 10px;
-                                                                                                                                                                      flex-wrap: wrap;
-                                                                                                                                                                          }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 26px;
+      padding: 22px 10px;
+      border-bottom: 1px solid #333;
+      overflow-x: auto;
+    }
 
-                                                                                                                                                                              nav a {
-                                                                                                                                                                                    color: white;
-                                                                                                                                                                                          text-decoration: none;
-                                                                                                                                                                                                font-weight: bold;
-                                                                                                                                                                                                    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 14px;
+      white-space: nowrap;
+      cursor: pointer;
+    }
 
-                                                                                                                                                                                                        .hero {
-                                                                                                                                                                                                              min-height: 60vh;
-                                                                                                                                                                                                                    display: flex;
-                                                                                                                                                                                                                          flex-direction: column;
-                                                                                                                                                                                                                                align-items: center;
-                                                                                                                                                                                                                                      justify-content: center;
-                                                                                                                                                                                                                                            text-align: center;
-                                                                                                                                                                                                                                                  padding: 30px;
-                                                                                                                                                                                                                                                      }
+    nav a:hover {
+      opacity: 0.7;
+    }
 
-                                                                                                                                                                                                                                                          .hero h2 {
-                                                                                                                                                                                                                                                                font-size: 38px;
-                                                                                                                                                                                                                                                                      margin-bottom: 15px;
-                                                                                                                                                                                                                                                                          }
+    .hero {
+      min-height: 430px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px 25px;
+    }
 
-                                                                                                                                                                                                                                                                              .hero p {
-                                                                                                                                                                                                                                                                                    color: #bbb;
-                                                                                                                                                                                                                                                                                          margin-bottom: 30px;
-                                                                                                                                                                                                                                                                                              }
+    .hero h1 {
+      font-size: 42px;
+      margin-bottom: 15px;
+    }
 
-                                                                                                                                                                                                                                                                                                  .shop-button {
-                                                                                                                                                                                                                                                                                                        background: white;
-                                                                                                                                                                                                                                                                                                              color: black;
-                                                                                                                                                                                                                                                                                                                    padding: 14px 28px;
+    .hero p {
+      color: #ccc;
+      margin-bottom: 28px;
+      font-size: 17px;
+    }
+
+    button {
+      background: white;
+      color: #111;
+      border: none;
+      padding: 15px 32px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .section {
+      display: none;
+      padding: 45px 20px 80px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .section.active {
+      display: block;
+    }
+
+    .section h2 {
+      text-align: center;
+      font-size: 30px;
+      margin-bottom: 10px;
+      letter-spacing: 2px;
+    }
+
+    .section-description {
+      text-align: center;
+      color: #aaa;
+      margin-bottom: 35px;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .product {
+      border: 1px solid #333;
+      background: #111;
+      min-height: 230px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+
+    .product-image {
+      flex: 1;
+      min-height: 150px;
+      background: #1c1c1c;
+      margin-bottom: 18px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #777;
+      font-size: 13px;
+    }
+
+    .product h3 {
+      font-size: 16px;
+      margin-bottom: 7px;
+    }
+
+    .product p {
+      color: #aaa;
+      font-size: 14px;
+    }
+
+    .cart-empty {
+      text-align: center;
+      padding: 70px 15px;
+      color: #aaa;
+    }
+
+    footer {
+      border-top: 1px solid #333;
+      text-align: center;
+      padding: 30px 15px;
+      color: #777;
+      font-size: 13px;
+    }
+
+    @media (min-width: 700px) {
+      .products {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      nav {
+        gap: 45px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">NY STYLE<br>BOUTIQUE</div>
+    <div class="subtitle">EXCLUSIVE STYLE • ARUBA</div>
+  </header>
+
+  <nav>
+    <a onclick="showSection('women')">WOMEN</a>
+    <a onclick="showSection('men')">MEN</a>
+    <a onclick="showSection('accessories')">ACCESSORIES</a>
+    <a onclick="showSection('cart')">CART</a>
+  </nav>
+
+  <main>
+
+    <section id="home" class="hero section active">
+      <div>
+        <h1>Welcome to NY Style Boutique</h1>
+        <p>Exclusive fashion selected for you.</p>
+        <button onclick="showSection('women')">SHOP NOW</button>
+      </div>
+    </section>
+
+    <section id="women" class="section">
+      <h2>WOMEN</h2>
+      <p class="section-description">Discover our women's collection.</p>
+
+      <div class="products">
+        <div class="product">
+          <div class="product-image">PRODUCT PHOTO</div>
+          <h3>New Arrival</h3>
+          <p>Coming soon</p>
+        </div>
+
+        <div class="product">
+          <div class="product-image">PRODUCT PHOTO</div>
+          <h3>New Arrival</h3>
+          <p>Coming soon</p>
+        </div>
+
+        <div class="product">
+          <div class="product-image">PRODUCT PHOTO</div>
+          <h3>New Arrival</h3>
+          <p>Coming soon</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="men" class="section">
+      <h2>MEN</h2>
+      <p class="section-description">Discover our men's collection.</p>
+
+      <div class="products">
+        <div class="product">
+          <div class="product-image">PRODUCT PHOTO</div>
+          <h3>New Arrival</h3>
+          <p>Coming soon</p>
+        </div>
+
+        <div class="product">
+          <div class="product-image">PRODUCT PHOTO</div>
+          <h3>New Arrival</h3>
+          <p>Coming soon</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="accessories" class="section">
+      <h2>ACCESSORIES</h2>
+      <p class="section-description">Complete your look.</p>
+
+      <div class="products">
+        <div class="product">
+          <div class="product-image">PRODUCT PHOTO</div>
+          <h3>New Accessory</h3>
+          <p>Coming soon</p>
+        </div>
+
+        <div class="product">
+          <div class="product-image">PRODUCT PHOTO</div>
+          <h3>New Accessory</h3>
+          <p>Coming soon</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="cart" class="section">
+      <h2>YOUR CART</h2>
+      <div class="cart-empty">
+        Your shopping cart is currently empty.
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    © 2026 NY Style Boutique • Aruba
+  </footer>
+
+  <script>
+    function showSection(sectionId) {
+      const sections = document.querySelectorAll('.section');
+
+      sections.forEach(function(section) {
+        section.classList.remove('active');
+      });
+
+      const selectedSection = document.getElementById(sectionId);
+
+      if (selectedSection) {
+        selectedSection.classList.add('active');
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      }
+    }
+  </script>
+
+</body>
+</html>                                                                                                                                                                                                                                                                                                                    padding: 14px 28px;
                                                                                                                                                                                                                                                                                                                           text-decoration: none;
                                                                                                                                                                                                                                                                                                                                 font-weight: bold;
                                                                                                                                                                                                                                                                                                                                       border-radius: 4px;
