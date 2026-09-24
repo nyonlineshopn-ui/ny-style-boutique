@@ -181,7 +181,13 @@
   const supabaseUrl = 'https://gdqggfjtntoxidgrknrk.supabase.co'
   const supabasekey = 'sb_publishable_5shMC9mWukS3Mkxf5Tdf-w_gooBU2sP'
   const supabaseClient = supabase.createClient(supabaseUrl, supabaseKey);
-
+async function loadProducts() {
+  const { data, error } = await supabaseClient
+  .from('products')
+  .select('*')
+  .eq('active',true);
+}
+loadProducts();
   </script>
 
 
