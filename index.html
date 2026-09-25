@@ -178,10 +178,8 @@
   </style>
  <!-- <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script> -->
   <script>
-    alert('JavaScript funciona');
   const supabaseUrl = 'https://gdqggfjtntoxidgrknrk.supabase.co'
   const supabasekey = 'sb_publishable_5shMC9mWukS3Mkxf5Tdf-w_gooBU2sP'
-  alert(typeof supabase);
   const supabaseClient = supabase.createClient(supabaseUrl, supabaseKey);
 async function loadProducts() {
   const { data, error } = await supabaseClient
@@ -189,7 +187,6 @@ async function loadProducts() {
   .select('*')
   .eq('active',true);
   console.log(data);
-  alert('DATA: ' + JSON.stringify(data) + ' | ERROR: ' + JSON.stringify(error));
   console.log(error);
 }
 loadProducts();
