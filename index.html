@@ -190,7 +190,7 @@ async function loadProducts() {
   console.log(error);
 alert('CANTIDAD: ' + (data ? data.length : 'SIN DATA'));
 }
-loadProducts();
+document.addEventListener('DOMContentLoaded', loadProducts);
 
   </script>
 
