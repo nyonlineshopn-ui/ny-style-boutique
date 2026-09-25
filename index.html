@@ -184,7 +184,6 @@
   alert(typeof supabase);
   const supabaseClient = supabase.createClient(supabaseUrl, supabaseKey);
 async function loadProducts() {
-  alert('loadProducts inicio');
   const { data, error } = await supabaseClient
   .from('products')
   .select('*')
@@ -192,7 +191,6 @@ async function loadProducts() {
   console.log(data);
   alert('DATA: ' + JSON.stringify(data) + ' | ERROR: ' + JSON.stringify(error));
   console.log(error);
-  alert(JSON.stringify({data, error}));
 }
 loadProducts();
 
