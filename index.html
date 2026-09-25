@@ -190,6 +190,7 @@ async function loadProducts() {
   .select('*')
   .eq('active',true);
   console.log(data);
+  alert('DATA: ' + JSON.stringify(data) + ' | ERROR: ' + JSON.stringify(error));
   console.log(error);
   alert(JSON.stringify({data, error}));
 }
