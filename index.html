@@ -186,6 +186,7 @@ async function loadProducts() {
   .from('products')
   .select('*')
   .eq('active',true);
+  console.log(data);
 }
 loadProducts();
 
