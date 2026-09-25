@@ -182,7 +182,7 @@
   const supabasekey = 'sb_publishable_5shMC9mWukS3Mkxf5Tdf-w_gooBU2sP'
   const supabaseClient = supabase.createClient(supabaseUrl, supabaseKey);
 async function loadProducts() {
-  alert('loasProducts inicio')l;
+  alert('loadProducts inicio')l;
   const { data, error } = await supabaseClient
   .from('products')
   .select('*')
