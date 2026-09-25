@@ -191,7 +191,7 @@ async function loadProducts() {
   .eq('active',true);
   console.log(data);
   console.log(error);
-  alert(error? JSON.stringiy(error):'Pruductos recibidos:'+ data.length);
+  alert(JSON.stringify({data, error}));
 }
 loadProducts();
 
