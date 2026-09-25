@@ -188,6 +188,7 @@ async function loadProducts() {
   .eq('active',true);
   console.log(data);
   console.log(error);
+alert('CANTIDAD: ' + (data ? data.length : 'SIN DATA'));
 }
 loadProducts();
 
@@ -224,7 +225,7 @@ loadProducts();
       <h2>WOMEN</h2>
       <p class="section-description">Discover our women's collection.</p>
 
-      <div class="products">
+      <div class="products" id="women-products">
         <div class="product">
           <div class="product-image">PRODUCT PHOTO</div>
           <h3>New Arrival</h3>
